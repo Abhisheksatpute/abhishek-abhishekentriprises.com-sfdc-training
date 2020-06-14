@@ -1,0 +1,7 @@
+<apex:page controller="AccountVFController" >
+<apex:pageBLock >    
+
+<c:RelatedListComponent records="{!records}" fields="{!fields}"></c:RelatedListComponent>
+</apex:pageBLock>
+
+</apex:page>

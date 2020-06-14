@@ -1,0 +1,60 @@
+<apex:page standardController="Job_Yourname__c">
+    <apex:includeScript value="{! $Resource.jquery }"/>
+     <apex:includescript value="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js" />
+    <apex:includeScript value="{! $Resource.try }"/>
+    <apex:stylesheet value="{!$Resource.trry}"/>
+ 
+    <head>
+        <title> Jquery Form Validation1</title>
+       
+    </head>
+     
+    <body>
+            <div class="container">
+                    <div class="form-area">
+                        <apex:form id="createform">
+                            <apex:outputPanel styleClass="red" layout="block">
+                                    <apex:pageBlock title="Job Wizard" id="pblock" mode="edit"><br/>
+                                        <div class="header">
+                                            <center><img src="{!$Resource.logo}" width="35%"/></center>
+                                        </div>
+
+                                        <div class="job">
+                                            <h1><u>Job Registration </u></h1><br/>
+                                        </div><br/>
+                                        <div class="step">
+                                            <h4> Step-1 </h4>    <br/>
+                                        </div>
+
+                                        <apex:pageBlockSection columns="2" id="pbsection1">
+                                                <apex:inputField id="name" value="{!Job_Yourname__c.Name}"/>
+                                                <apex:inputField id="mang" value="{!Job_Yourname__c.Mangers__c}"/>
+                                                <apex:inputField id="jobtype" value="{!Job_Yourname__c.Manager__c}"/>
+                                        </apex:pageBlockSection>
+
+                                        <apex:pageBlockSection columns="1" id="pbsection">
+                                            <apex:inputtextarea id="des" value="{!Job_Yourname__c.Description__c}" styleClass="sample"/>
+                                            <apex:inputField id="pos" value="{!Job_Yourname__c.Number_of_Positions__c}"/>
+                                            <apex:inputField id="sal" value="{!Job_Yourname__c.Salary_Offered__c}"/>
+                                            <apex:inputField id="expd" value="{!Job_Yourname__c.Expires_On__c }"/>
+                                        </apex:pageBlockSection>
+
+                                        <apex:pageBlockButtons id="button" location="bottom" >
+                                            <apex:commandButton onclick="myfunction()" styleClass="buttonStyle" action="{!save}"  value="Save & next"/>
+                                        </apex:pageBlockButtons>
+
+
+                                        <apex:pageBlockSection >
+                                           <apex:detail />
+                                        </apex:pageBlockSection>
+
+
+                                        <apex:pageMessages />
+                                    </apex:pageBlock>
+                            </apex:outputPanel>
+                    </apex:form>
+                </div>
+            </div>
+    </body>
+
+</apex:page>
